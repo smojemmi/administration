@@ -1,0 +1,27 @@
+easy_admin:
+    entities:
+      Post:
+          class: App\Entity\Post
+          templates:
+            edit: 'admin/post/edit.html.twig'
+          form:
+            fields: 
+            - {property: 'id', type: 'text'}
+            - {property: 'name', type: 'text'}
+            - {property: 'slug', type: 'text'}
+            - {property: 'category'}
+            - {property: 'tags'}
+            - {property: 'online'}
+
+          list: 
+            fields: 
+              - {property: 'id', type: 'text'}
+              - {property: 'name', type: 'text'}
+              - {property: 'slug', type: 'text'}
+              - {property: 'category'}
+              - {property: 'online',type: 'boolean'}
+            actions:
+              - {name: 'edit', icon: 'pencil', label: 'Edit' , css_class: 'btn btn-secondary'}
+              - {name: 'delete', icon: 'trash', label: 'Delete', css_class: 'btn btn-danger'}
+
+        # List the entity class name you want to manage
